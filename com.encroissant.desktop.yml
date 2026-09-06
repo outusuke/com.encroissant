@@ -9,6 +9,7 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --share=network
+  - --talk-name=org.freedesktop.Flatpak # Needed for flatpak-spawn --host to run external engines
 modules:
   - name: en-croissant
     buildsystem: simple
