@@ -16,9 +16,11 @@ modules:
       - ar -x *.deb
       - tar -xf data.tar.gz 2>/dev/null || tar -xf data.tar.xz
       - install -Dm755 usr/bin/en-croissant /app/bin/en-croissant
+      - sed -i 's/Icon=en-croissant/Icon=com.encroissant.desktop/' usr/share/applications/en-croissant.desktop
       - install -Dm644 usr/share/applications/en-croissant.desktop /app/share/applications/com.encroissant.desktop.desktop
       - install -Dm644 usr/share/icons/hicolor/128x128/apps/en-croissant.png /app/share/icons/hicolor/128x128/apps/com.encroissant.desktop.png
       - install -Dm644 usr/share/icons/hicolor/32x32/apps/en-croissant.png /app/share/icons/hicolor/32x32/apps/com.encroissant.desktop.png
+      - install -Dm644 'usr/share/icons/hicolor/256x256@2/apps/en-croissant.png' '/app/share/icons/hicolor/256x256@2/apps/com.encroissant.desktop.png'
       - install -Dm644 com.encroissant.desktop.metainfo.xml /app/share/metainfo/com.encroissant.desktop.metainfo.xml
     sources:
       - type: file
