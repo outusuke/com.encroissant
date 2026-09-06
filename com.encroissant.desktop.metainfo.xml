@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.encroissant.desktop</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>En Croissant</name>
+  <summary>The Ultimate Chess Toolkit</summary>
+  <description>
+    <p>En Croissant is a cross-platform chess GUI for analyzing games, managing engines and databases, and training openings.</p>
+  </description>
+  <launchable type="desktop-id">com.encroissant.desktop.desktop</launchable>
+  <url type="homepage">https://encroissant.org</url>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.15.1" date="2026-03-01"/>
+  </releases>
+</component>

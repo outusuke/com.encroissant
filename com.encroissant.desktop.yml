@@ -1,0 +1,29 @@
+id: com.encroissant.desktop
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
+command: en-croissant
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+  - --share=network
+  - --filesystem=xdg-documents
+modules:
+  - name: en-croissant
+    buildsystem: simple
+    build-commands:
+      - ar -x *.deb
+      - tar -xf data.tar.gz 2>/dev/null || tar -xf data.tar.xz
+      - install -Dm755 usr/bin/en-croissant /app/bin/en-croissant
+      - install -Dm644 usr/share/applications/en-croissant.desktop /app/share/applications/com.encroissant.desktop.desktop
+      - install -Dm644 usr/share/icons/hicolor/128x128/apps/en-croissant.png /app/share/icons/hicolor/128x128/apps/com.encroissant.desktop.png
+      - install -Dm644 usr/share/icons/hicolor/32x32/apps/en-croissant.png /app/share/icons/hicolor/32x32/apps/com.encroissant.desktop.png
+      - install -Dm644 com.encroissant.desktop.metainfo.xml /app/share/metainfo/com.encroissant.desktop.metainfo.xml
+    sources:
+      - type: file
+        url: https://github.com/franciscoBSalgueiro/en-croissant/releases/download/v0.15.1/en-croissant_0.15.1_amd64.deb
+        sha256: 115a682daa910a5317379b6e739d9e9f7bf825f522a49fc12af11bd6fce8856a
+      - type: file
+        path: com.encroissant.desktop.metainfo.xml
